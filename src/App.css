@@ -1,6 +1,13 @@
 .App {
     text-align: center;
   }
+
+  .content {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   
   .App-logo {
     height: 40vmin;
