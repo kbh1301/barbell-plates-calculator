@@ -6,8 +6,10 @@ function App() {
   return (
     <div className="App">
       {/* <Navigation /> */}
-      <WeightInput />
-      <Footer />
+      <div className="content">
+        <WeightInput />
+        <Footer />
+      </div>
     </div>
   );
 }

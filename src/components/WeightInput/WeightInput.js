@@ -2,28 +2,30 @@
 - limit input to numbers
 - limit input to certain range (ex 500 lbs)
 - disallow decimal inputs
-- handle inputs that don't end in 5 or 0
-  - results = ''
-  - if last digit = 5 || 0 then results += 'Bar' and continue calculations
-
-Ex weight is 180
-180 - 45 (Bar) = 135
-135 / 2 (Each side) = 67.5
+- handle inputs that don't end in 5 or 2.5 or 0
+  - add leftover weight to display
+  - add warning message
+- limit plate images height based on barbell image height
+  - scale each plate size based on percentage compared to biggest size in array
+- stack same size plates with slight offset?
 */
 
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 import './WeightInput.css'
+import barbellImg from '../../img/barbell.png'
+import plateImg from '../../img/plate.png'
 
 const useStyles = makeStyles((theme) => ({
     root: {'& > *': { margin: theme.spacing(1), width: '25ch'}}}));
 
 const calcWeights = (weightVal) => {
-    const plates = [ 45, 35, 25, 10, 5, 2.5 ];
-    let results = 'Bar';
+    const plates = [ 45, 35, 25, 10, 5, 2.5, 1.25 ];
+    // initializes image array with empty barbell
+    let results = [ <td><img src={barbellImg} alt="" /></td> ];
     let curWeight = weightVal;
 
     curWeight -= 45; // subtract standard bar weight
@@ -34,13 +36,16 @@ const calcWeights = (weightVal) => {
         let wholePlate = curWeight / plate;
         if(wholePlate >= 1){
             for(let i = wholePlate; i >= 1; i--) {
-                results += ` + ${plate}`;
+                // adds plates to right side of bar
+                results.push( <td><img src={plateImg} alt="" /><div>{plate}</div></td> );
+                // adds plates to left side of bar
+                results.unshift( <td><img src={plateImg} alt="" /><div>{plate}</div></td> );
                 curWeight -= plate;
             }
         }
     });
 
-    console.log(curWeight); // leftover weight
+    if(curWeight > 0) results.push(<p>{curWeight}</p>); // leftover weight
 
     return results;
 }
@@ -50,17 +55,17 @@ const WeightInput = () => {
     const classes = useStyles();
 
     return(
-        <div>
+        <Fragment>
             <div className="flex items-center justify-center">
                 <FitnessCenterIcon />
                 <form className={classes.root} noValidate autoComplete="off">
-                    <TextField id="outlined-basic" label="Weight" variant="outlined"
+                    <TextField id="outlined-basic" label="Weight" variant="outlined" type="number"
                     InputProps={{ endAdornment: <InputAdornment position="end">lbs</InputAdornment> }}
                     onChange={(event) => {setWeightVal(event.target.value)}}/>
                 </form>
             </div>
-            {calcWeights(weightVal)}
-        </div>
+            <div className="weightDisplay">{calcWeights(weightVal)}</div>
+        </Fragment>
     );
 }
 
