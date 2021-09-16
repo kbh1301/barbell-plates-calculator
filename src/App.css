@@ -2,6 +2,17 @@
     text-align: center;
   }
 
+  .weightDisplay {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border: 5px dotted lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
   .content {
     display: flex;
     min-height: 100vh;
