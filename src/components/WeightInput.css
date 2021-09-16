@@ -2,20 +2,13 @@
     box-sizing: content-box;
 }
 
-.weightDisplay {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    border: 5px dotted lightgray;
+.BarbellVisualization {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.weightDisplay {
-    height: 150px;
-    /* max-width: 100%; */
-    /* max-height: 100%; */
+.barbellImg {
+    height: 20%;
 }
 
 .plateImg {
@@ -30,7 +23,8 @@
 
 .weightDisplayNumber {
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -48,11 +42,11 @@
     border-radius: 9999px; */
 }
 
-td {
+.flexCell {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 5px 0px 5px 0px;
     position: relative;
     height: 100%;
 }
