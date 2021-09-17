@@ -9,23 +9,38 @@
 - limit plate images height based on barbell image height
   - scale each plate size based on percentage compared to biggest size in array
 - stack same size plates with slight offset?
+- add metric toggle to WeightInput
 */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import WeightInput from './components/WeightInput';
 import BarbellVisualization from './components/BarbellVisualization';
 import WeightInfo from './components/WeightInfo';
+import { getInputArray, getCountObj } from './utils.js';
 
 function App() {
-  const [weightVal, setWeightVal] = useState(0);
+  const [metric, setMetric] = useState('');
+  const [input, setInput] = useState(0);
+  const [inputArray, setInputArray] = useState([]);
+  const [countObj, setCountObj] = useState({});
+
+  // update inputArray whenever metric or input state changes
+  useEffect(() => {
+    setInputArray(getInputArray(metric, input));
+  },[metric, input]);
+
+  // update countObj whenever inputArray state changes
+  useEffect(() => {
+    setCountObj(getCountObj(inputArray));
+  },[inputArray]);
 
   return (
     <div className="App">
       <div className="content">
-        <WeightInput setWeightVal={setWeightVal} />
+        <WeightInput setInput={setInput} setMetric={setMetric} />
         <div className="weightDisplay">
-          <BarbellVisualization weightVal={weightVal} />
-          <WeightInfo />
+          <BarbellVisualization inputArray={inputArray} metric={metric} />
+          <WeightInfo countObj={countObj} />
         </div>
       </div>
     </div>

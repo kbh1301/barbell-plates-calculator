@@ -8,8 +8,9 @@ import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
 const useStyles = makeStyles((theme) => ({
     root: {'& > *': { margin: theme.spacing(1), width: '25ch'}}}));
 
-const WeightInput = ({ setWeightVal }) => {
+const WeightInput = ({ setInput, setMetric }) => {
     const classes = useStyles();
+    const metric = '';
 
     return(
         <Fragment>
@@ -18,7 +19,7 @@ const WeightInput = ({ setWeightVal }) => {
                 <form className={classes.root} noValidate autoComplete="off">
                     <TextField id="outlined-basic" label="Weight" variant="outlined" type="number"
                     InputProps={{ endAdornment: <InputAdornment position="end">lbs</InputAdornment> }}
-                    onChange={(event) => {setWeightVal(event.target.value)}}/>
+                    onChange={(event) => {setInput(event.target.value)}}/>
                 </form>
             </div>
         </Fragment>
