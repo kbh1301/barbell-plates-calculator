@@ -1,0 +1,13 @@
+.weightInfoNumber {
+    text-align: right;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    color: white;
+    font-weight: 900;
+    display:inline-block;
+    font-size: 2em;
+    padding-left: 2em;
+}
