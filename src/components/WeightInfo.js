@@ -5,15 +5,26 @@ const WeightInfo = ({ countObj }) => {
     const buildPlateInfo = () => Object.keys(countObj)
         .sort((a,b) => b - a)
         .map((i) => {
-            return <div>{countObj[i]} x {i} lb</div>
+            return (
+                <tr>
+                    <td style={{textAlign: "left"}}>{countObj[i]}</td>
+                    <td>{i} lb</td>
+                </tr>
+            )
         });
 
     // complete WeightInfo
     return(
-        <div className="weightInfoNumber">
-            PER SIDE<br/>
-            {buildPlateInfo()}
-        </div>
+        <table className="weightInfoNumber">
+            <thead>
+                <tr>
+                    <th colSpan="2">PER SIDE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {buildPlateInfo()}
+            </tbody>
+        </table>
     );
 }
 

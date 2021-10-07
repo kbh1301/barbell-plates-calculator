@@ -5,8 +5,9 @@
   .weightDisplay {
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 1em;
     width: 90%;
-    border: 5px dotted lightgray;
+    /* border: 5px dotted lightgray; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     border: solid;
+    border-radius: 1rem;
   }
   
   .App-logo {

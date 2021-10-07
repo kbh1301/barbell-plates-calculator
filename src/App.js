@@ -6,10 +6,9 @@
 - handle inputs that don't end in 5 or 2.5 or 0
   - add leftover weight to display
   - add warning message
-- limit plate images height based on barbell image height
-  - scale each plate size based on percentage compared to biggest size in array
-- stack same size plates with slight offset?
 - add metric toggle to WeightInput
+- right to left color gradient for each weight in info
+  - matching color overlay for plates
 */
 import React, { useState, useEffect } from 'react';
 import './App.css';
@@ -37,11 +36,11 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <WeightInput setInput={setInput} setMetric={setMetric} />
         <div className="weightDisplay">
           <BarbellVisualization inputArray={inputArray} metric={metric} />
           <WeightInfo countObj={countObj} />
         </div>
+        <WeightInput setInput={setInput} setMetric={setMetric} />
       </div>
     </div>
   );

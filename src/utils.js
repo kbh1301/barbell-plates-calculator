@@ -43,12 +43,6 @@ const calcWeight = (plates, weightVal) => {
             }
         }
     });
-    // add leftover weight to inputArray
-    if(curWeight > 0) inputArray.push({
-        plateWeight: curWeight,
-        plateSize: 'leftover'
-    });
-
     return inputArray;
 }
 
@@ -60,9 +54,7 @@ export const getCountObj = (inputArray) => {
     const counts = {};
 
     // create array of plateWeight values
-    inputArray.map((plate) => {
-        return plate.plateWeight
-    })
+    inputArray.map((plate) => plate.plateWeight)
     // retrieve count for each plate and add to counts object
     .forEach((i) => {
         counts[i] = (counts[i] || 0) + 1;
