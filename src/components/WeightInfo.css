@@ -1,4 +1,9 @@
 .weightInfoNumber {
+    margin-left: 1.25em;
+    border: 1.5px solid black;
+    border-radius: 1rem;
+    overflow: hidden auto;
+    height: 100%;
     text-align: right;
     text-shadow:
         -1px -1px 0 black,
@@ -9,5 +14,25 @@
     font-weight: 900;
     display:inline-block;
     font-size: 2em;
-    padding-left: 2em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+th {
+    background-color: darkgray;
+    text-align: center;
+    padding: .25em .5em .25em .5em;
+    border-bottom: 1.5px solid black;
+    font-family: Montserrat, sans-serif
+}
+
+td {
+    padding: .0625em .25em .0625em .25em;
+    font-family: Lato, sans-serif;
 }

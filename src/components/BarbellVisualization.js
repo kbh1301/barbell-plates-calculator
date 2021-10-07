@@ -11,12 +11,7 @@ const BarbellVisualization = ({ inputArray }) => {
     const buildPlateImgs = () => inputArray.map((plate) => {
         return(
             <div className="flexCell">
-                { // if plateSize prop is NOT 'leftover', add plate image
-                plate.plateSize !== 'leftover'
-                    ? <img className="plateImg" src={plateImg} alt="" style={{height:`${plate.plateSize}%`}}/>
-                    : null
-                }
-                {/* <div className="weightDisplayNumber">{plate.plateWeight}<br/></div> */}
+                <img className="plateImg" src={plateImg} alt="" style={{height:`${plate.plateSize}%`}}/>
             </div>
         );
     });
