@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import './WeightInput.css'
+import './WeightInput/WeightInput.scss'
 import barbell_shaftImg from '../img/barbell_shaft.png'
 import barbell_sleeveCapImg from '../img/barbell_sleeveCap.png'
 import barbell_sleeveImg from '../img/barbell_sleeve.png'

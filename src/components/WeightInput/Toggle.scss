@@ -1,0 +1,105 @@
+// when label associated with checkbox is clicked, checkbox is activated
+
+/* toggle variables */
+$toggleBgHeight: 30px;
+$toggleBgWidth: 65px;
+$toggleBgColor1: darkgray;
+$toggleBgColor2: gray;
+$toggleBgFocusColor1: #7cdafa;
+$toggleBgFocusColor2: #40e0d0;
+
+$toggleBtnPad: 2px;
+$toggleBtnHeight: $toggleBgHeight - ($toggleBtnPad * 2);
+$toggleBtnWidth: ($toggleBgWidth / 2) - $toggleBtnPad;
+$toggleBtnColor: white;
+
+$toggleTxtWidth: $toggleBtnWidth;
+$toggleTxtColor1: black;
+$toggleTxtColor2: white;
+
+// hides checkbox offscreen
+#metric-input {
+    position: absolute;
+    right: 100%;
+}
+
+// toggle background
+.metric-toggle {
+    text-align: left;
+    cursor: pointer;
+	display: inline-block;
+	position: relative;
+	width: $toggleBgWidth;
+	height: $toggleBgHeight;
+	background: $toggleBgColor1;
+	border-radius: 5px;
+	transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+// changes background color when checked
+#metric-input:checked + .input-wrapper .metric-toggle {
+    background: $toggleBgColor2;
+}
+.inputRow:focus-within .metric-toggle {
+    background: $toggleBgFocusColor1;
+}
+.inputRow:focus-within #metric-input:checked + .input-wrapper .metric-toggle {
+    background: $toggleBgFocusColor2;
+}
+
+// all toggle text
+.metric-toggle:before, .metric-toggle:after {
+    position: absolute;
+    width: $toggleTxtWidth;
+    text-align: center;
+	line-height: $toggleBgHeight;
+	font-size: 13px;
+    font-weight: 700;
+	z-index: 2;
+	transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+// left toggle text
+.metric-toggle:before {
+    content: "lbs";
+	left: $toggleBtnPad;
+	color: $toggleTxtColor1;
+}
+// changes left text color when checked
+#metric-input:checked + .input-wrapper .metric-toggle:before {
+    color: $toggleTxtColor2;
+}
+.inputRow:focus-within .metric-toggle:before {
+	color: $toggleBgFocusColor1;
+}
+
+// right toggle text
+.metric-toggle:after {
+	content: "kgs";
+	right: $toggleBtnPad;
+	color: $toggleTxtColor2;
+}
+// changes right text color when checked
+#metric-input:checked + .input-wrapper .metric-toggle:after {
+    color: $toggleTxtColor1;
+}
+.inputRow:focus-within #metric-input:checked + .input-wrapper .metric-toggle:after {
+	color: $toggleBgFocusColor2;
+}
+
+// toggle button
+.toggle-handler {
+    display: inline-block;
+	position: relative;
+	z-index: 1;
+	background: $toggleBtnColor;
+	width: $toggleBtnWidth;
+	height: $toggleBtnHeight;
+	border-radius: 3px;
+	top: $toggleBtnPad;
+	left: $toggleBtnPad;
+	transition: all 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	transform: translateX(0px);
+}
+// changes toggle button position when checked
+#metric-input:checked + .input-wrapper .metric-toggle .toggle-handler {
+    transform: translateX($toggleBtnWidth);
+}

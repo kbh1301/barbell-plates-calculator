@@ -1,0 +1,66 @@
+/* input variables */
+$inputHeight: 48px;
+$inputInnerWidth: 20px;
+$inputBorder: 1.5px;
+$inputBlurColor: gray;
+$inputFocusColor: #00bafa;
+$inputFocusColor2: #40e0d0;
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: $inputBorder solid $inputBlurColor;
+    border-radius: 1em;
+    margin: 0 0 0 10px;
+    padding: 0 ($inputInnerWidth / 2) 0 0;
+}
+.input-wrapper > form {
+    position: relative;
+    line-height: $inputBorder * 2;
+    display: inline-block;
+    margin: -$inputBorder;
+}
+#weight-input + label {
+    color: $inputBlurColor;
+    font-size: 12px;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
+    left: $inputInnerWidth;
+    top: $inputHeight / 2;
+    padding: 0 2px;
+    pointer-events: none;
+    background: #fff;
+    transition: .2s ease-in-out;
+    transform: translateY($inputHeight / -2);
+}
+#weight-input {
+    height: $inputHeight;
+    width: 135px;
+    font-size: 13px;
+    color: #555;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0 ($inputInnerWidth / 2) 0 $inputInnerWidth;
+    position: relative;
+}
+// moves label into input when input is invalid
+// input is invalid when empty because input is set to required
+#weight-input:invalid + label {
+    transform: translateY(0);
+}
+.inputRow:focus-within .input-wrapper {
+    border-color: $inputFocusColor;
+}
+.inputRow:focus-within #metric-input:checked + .input-wrapper {
+    border-color: $inputFocusColor2;
+}
+#weight-input:focus + label {
+    // color: $inputFocusColor;
+    transform: translateY($inputHeight / -2);
+}
+#metric-input:checked + .input-wrapper #weight-input:focus + label {
+    // color: $inputFocusColor2;
+    transform: translateY($inputHeight / -2);
+}

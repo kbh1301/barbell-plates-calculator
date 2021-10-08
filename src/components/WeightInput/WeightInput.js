@@ -5,15 +5,17 @@
 
 if(!value % 2.5 === 0)
                     console.log('error');
+
+-- add step arrows beside metric toggle
 */
 
 import React, { useState, useEffect, Fragment } from 'react';
-import './WeightInput.css';
-import bbIcon from '../img/bbIcon.png'
+import './WeightInput.scss';
+import './Input.scss';
+import './Toggle.scss';
+import bbIcon from '../../img/bbIcon.png'
 
 const WeightInput = ({ setInput, setMetric }) => {
-    const metric = '';
-
     const validateInput = (input) => {
         let val = input.value;
         const maxLength = input.max.length;
@@ -41,22 +43,30 @@ const WeightInput = ({ setInput, setMetric }) => {
 
     return(
         <Fragment>
-            <div className="inputRow flex items-center justify-center">
+            <div className="inputRow">
                 <img className="bbIcon" src={bbIcon}/>
-                <div className="inputRow2">
-                <form>
-                    <input
-                        id="weightInput"
-                        type="number"
-                        min="0"
-                        max="1500"
-                        step="2.5"
-                        required
-                        onInput={(e) => validateInput(e.target)}
-                    />
-                    <label alt="Weight" placeholder="Weight"></label>
-                </form>
-                <div>lbs</div>
+                <input
+                    id="metric-input"
+                    type="checkbox"
+                    onChange={(e) => setMetric(e.target.checked)}
+                />
+                <div className="input-wrapper">
+                    <form>
+                        <input
+                            id="weight-input"
+                            type="number"
+                            min="0"
+                            max="1500"
+                            step="2.5"
+                            required
+                            defaultValue="202.5"
+                            onInput={(e) => validateInput(e.target)}
+                        />
+                        <label for="weight-input">Weight</label>
+                    </form>
+                    <label for="metric-input" class="metric-toggle">
+                        <span class="toggle-handler"/>
+                    </label>
                 </div>
             </div>
         </Fragment>
