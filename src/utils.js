@@ -10,7 +10,7 @@ const platesFromMetric = (metric) => {
 
 // calculate optimal plates based on user input and store results in array
 // includes sizing calculation property for img height
-const calcWeight = (plates, weightVal) => {
+const calcWeight = (metric, plates, weightVal) => {
     // sort plates array by highest to lowest
     plates.sort((a,b) => b - a);
 
@@ -20,7 +20,7 @@ const calcWeight = (plates, weightVal) => {
     // tracks remaining weight throughout calculation
     let curWeight = weightVal;
 
-    curWeight -= 45; // subtract standard bar weight
+    metric ? curWeight -= 20 : curWeight -= 45; // subtract standard bar weight
     curWeight /= 2; // get one side of bar
 
     // iterates through plates array, adding plates to inputArray if within curWeight
@@ -47,7 +47,7 @@ const calcWeight = (plates, weightVal) => {
 }
 
 export const getInputArray = (metric, input) => {
-    return (calcWeight(platesFromMetric(metric), input))
+    return (calcWeight(metric, platesFromMetric(metric), input))
 }
 
 export const getCountObj = (inputArray) => {

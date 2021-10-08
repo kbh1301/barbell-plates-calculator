@@ -18,7 +18,7 @@ const WeightInfo = ({ countObj }) => {
         <table className="weightInfoNumber">
             <thead>
                 <tr>
-                    <th colSpan="2">PER SIDE</th>
+                    <th colSpan="2">PER SIDE:</th>
                 </tr>
             </thead>
             <tbody>
