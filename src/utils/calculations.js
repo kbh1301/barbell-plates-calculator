@@ -1,16 +1,16 @@
 // determines array of available plates based on kilograms or pounds
 const platesFromMetric = (metric) => {
     return (
-        // if metric has value, return kg array; else, return lb array
+        // if metric is true, return kg array; else, return lb array
         metric
-            ? [ 20, 15, 10, 5, 2.5, 1.25, 0.5] 
+            ? [ 20, 15, 10, 5, 2.5, 1.25, 0.5 ] 
             : [ 45, 35, 25, 10, 5, 2.5, 1.25 ]
     )
 }
 
 // calculate optimal plates based on user input and store results in array
 // includes sizing calculation property for img height
-const calcWeight = (metric, plates, weightVal) => {
+const calcWeight = (plates, metric, weightVal) => {
     // sort plates array by highest to lowest
     plates.sort((a,b) => b - a);
 
@@ -47,7 +47,7 @@ const calcWeight = (metric, plates, weightVal) => {
 }
 
 export const getInputArray = (metric, input) => {
-    return (calcWeight(metric, platesFromMetric(metric), input))
+    return (calcWeight(platesFromMetric(metric), metric, input));
 }
 
 export const getCountObj = (inputArray) => {
@@ -61,4 +61,21 @@ export const getCountObj = (inputArray) => {
     });
 
     return counts;
+}
+
+export const getStep = (metric) => {
+    return platesFromMetric(metric).at(-1);
+}
+
+export const metricConversion = (metric, inputComponent) => {
+    let inputVal = inputComponent.current.value;
+    if(metric) {
+        inputVal /= 2.205;
+        inputVal -= inputVal % (0.5 * 2);
+    } else {
+        inputVal *= 2.205;
+        inputVal -= inputVal % (1.25 * 2);
+        inputVal += (1.25 * 2);
+    }
+    return inputVal;
 }
