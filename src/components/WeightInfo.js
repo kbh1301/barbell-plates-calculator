@@ -1,6 +1,6 @@
 import './WeightInfo.css';
 
-const WeightInfo = ({ countObj }) => {
+const WeightInfo = ({ countObj, metric }) => {
     // sort countObj; for each element, add info component
     const buildPlateInfo = () => Object.keys(countObj)
         .sort((a,b) => b - a)
@@ -8,14 +8,14 @@ const WeightInfo = ({ countObj }) => {
             return (
                 <tr>
                     <td style={{textAlign: "left"}}>{countObj[i]}</td>
-                    <td>{i} lb</td>
+                    <td>{i} {metric ? "kg" : "lb"}</td>
                 </tr>
             )
         });
 
     // complete WeightInfo
     return(
-        <table className="weightInfoNumber">
+        <table className="weight-info-number">
             <thead>
                 <tr>
                     <th colSpan="2">PER SIDE:</th>

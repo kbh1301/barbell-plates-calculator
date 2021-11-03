@@ -10,26 +10,26 @@ const BarbellVisualization = ({ inputArray }) => {
     // for each plate in inputArray, create img component
     const buildPlateImgs = () => inputArray.map((plate) => {
         return(
-            <div className="flexCell">
-                <img className="plateImg" src={plateImg} alt="" style={{height:`${plate.plateSize}%`}}/>
+            <div className="flex-cell">
+                <img className="plate-img" src={plateImg} alt="" style={{height:`${plate.plateSize}%`}}/>
             </div>
         );
     });
     
     // complete BarbellVisualization component
     return (
-        <div className="BarbellVisualization">
-            <div className="flexCell">
-                <img className="barbellImg" src={barbell_shaftImg} alt="" />
-                <img className="barbellImg" src={barbell_sleeveCapImg} alt="" />
+        <div className="barbell-visualization">
+            <div className="flex-cell">
+                <img className="barbell-img" src={barbell_shaftImg} alt="" />
+                <img className="barbell-img" src={barbell_sleeveCapImg} alt="" />
             </div>
-            <div className="flexCell">
+            <div className="flex-cell">
                 { // if inputArray is empty, return empty sleeve; else, return plateStack weights and shortened sleeve
                 !inputArray.length
-                    ? <img className="barbellImg" src={barbell_sleeveImg} alt="" />
+                    ? <img className="barbell-img" src={barbell_sleeveImg} alt="" />
                     :   <Fragment>
                             {buildPlateImgs()}
-                            <img className="barbellImg" src={barbell_sleeveCutImg} alt="" />
+                            <img className="barbell-img" src={barbell_sleeveCutImg} alt="" />
                         </Fragment>
                 }
             </div>

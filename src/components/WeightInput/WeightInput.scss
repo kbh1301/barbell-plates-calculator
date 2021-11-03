@@ -1,4 +1,4 @@
-.inputRow {
+.input-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,42 +9,21 @@
     box-sizing: content-box;
 }
 
-.BarbellVisualization {
+.barbell-visualization {
     max-height: 250px;
     display: flex;
 }
 
-.barbellImg {
+.barbell-img {
     height: 20%;
 }
 
-.plateImg {
+.plate-img {
     max-width: 100%;
     max-height: 100%;
 }
 
-.weightDisplayNumber {
-    position: absolute;
-    /* top: 50%; */
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    text-shadow:
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black;
-    color: white;
-    font-weight: 900;
-    display:inline-block;
-    font-size: 2em;
-    /* background-color: lightslategray;
-    padding: .5rem 1.5rem .5rem 1.5rem;
-    border-radius: 9999px; */
-}
-
-.flexCell {
+.flex-cell {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +31,7 @@
     height: 100%;
 }
 
-.bbIcon {
+.bb-icon {
     height: 20px;
     transform: rotate(45deg);
 }
