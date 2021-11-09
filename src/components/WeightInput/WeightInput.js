@@ -20,8 +20,8 @@ const WeightInput = ({ step, setInput, setMetric, inputComponent }) => {
 
     return(
         <Fragment>
-            <div className="inputRow">
-                <img className="bbIcon" src={bbIcon}/>
+            <div className="input-row">
+                <img className="bb-icon" src={bbIcon}/>
                 <input
                     id="metric-input"
                     type="checkbox"

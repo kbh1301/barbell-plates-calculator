@@ -50,10 +50,10 @@ $inputFocusColor2: #40e0d0;
 #weight-input:invalid + label {
     transform: translateY(0);
 }
-.inputRow:focus-within .input-wrapper {
+.input-row:focus-within .input-wrapper {
     border-color: $inputFocusColor;
 }
-.inputRow:focus-within #metric-input:checked + .input-wrapper {
+.input-row:focus-within #metric-input:checked + .input-wrapper {
     border-color: $inputFocusColor2;
 }
 #weight-input:focus + label {

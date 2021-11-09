@@ -1,9 +1,10 @@
-.weightInfoNumber {
+.weight-info-number {
     margin-left: 1.25em;
     overflow: hidden;
     border: 1.5px solid black;
     border-radius: 1rem;
-    height: 265px;
+    max-height: 100%;
+    min-height: fit-content;
     text-align: right;
     text-shadow:
         -1px -1px 0 black,

@@ -39,10 +39,10 @@ $toggleTxtColor2: white;
 #metric-input:checked + .input-wrapper .metric-toggle {
     background: $toggleBgColor2;
 }
-.inputRow:focus-within .metric-toggle {
+.input-row:focus-within .metric-toggle {
     background: $toggleBgFocusColor1;
 }
-.inputRow:focus-within #metric-input:checked + .input-wrapper .metric-toggle {
+.input-row:focus-within #metric-input:checked + .input-wrapper .metric-toggle {
     background: $toggleBgFocusColor2;
 }
 
@@ -67,7 +67,7 @@ $toggleTxtColor2: white;
 #metric-input:checked + .input-wrapper .metric-toggle:before {
     color: $toggleTxtColor2;
 }
-.inputRow:focus-within .metric-toggle:before {
+.input-row:focus-within .metric-toggle:before {
 	color: $toggleBgFocusColor1;
 }
 
@@ -81,7 +81,7 @@ $toggleTxtColor2: white;
 #metric-input:checked + .input-wrapper .metric-toggle:after {
     color: $toggleTxtColor1;
 }
-.inputRow:focus-within #metric-input:checked + .input-wrapper .metric-toggle:after {
+.input-row:focus-within #metric-input:checked + .input-wrapper .metric-toggle:after {
 	color: $toggleBgFocusColor2;
 }
 

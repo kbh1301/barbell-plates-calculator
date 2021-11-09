@@ -1,22 +1,3 @@
-/*
-- fix CSS naming (use hyphens instead of camel)
-- fade in visualizations
-- update utils to update value when metric is changed
-
-- convert css on-input-focus color changes to js and compare speeds
-*/
-
-/*
-WEIGHTINPUT
--- input step should be double the lowest weight of metric array (utils.js) * 2
--- timer after timing will round input down to nearest step
--- input border flash red and shake animation when invalid or is auto-corrected
-
-if(!value % lowestStepValue === 0)
-  // code to change input state to rounded-down-to-nearest-step value
-
--- add step arrows beside metric toggle
-*/
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import WeightInput from './components/WeightInput/WeightInput';
@@ -39,15 +20,17 @@ function App() {
 
   // update & validate inputComponent when input state changes
   useEffect(() => {
-    inputComponent.current.value = input;
+    if(input) {
+      inputComponent.current.value = input;
 
-    if(!initialRender) validateInput(inputComponent, setInput);
+      if(!initialRender) validateInput(inputComponent, setInput);
 
-    // validate input by step when user stops typing for set time
-    const delayDebounce = setTimeout(() => {
-      inputComponent.current.value = validateInputByStep(inputComponent, step);
-    }, 2000)
-    return () => clearTimeout(delayDebounce)
+      // validate input by step when user stops typing for set time
+      const delayDebounce = setTimeout(() => {
+        inputComponent.current.value = validateInputByStep(inputComponent, step);
+      }, 2000)
+      return () => clearTimeout(delayDebounce)
+    }
   },[input]);
 
   // update inputComponent and step when metric state changes
@@ -72,9 +55,9 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <div className="weightDisplay">
+        <div className="weight-display">
           <BarbellVisualization inputArray={inputArray} metric={metric} />
-          <WeightInfo countObj={countObj} />
+          <WeightInfo countObj={countObj} metric={metric} />
         </div>
         <WeightInput step={step} setInput={setInput} setMetric={setMetric} inputComponent={inputComponent} />
       </div>
