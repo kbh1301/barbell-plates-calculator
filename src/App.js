@@ -53,7 +53,7 @@ function App() {
   },[inputArray]);
 
   return (
-    <div className="App">
+    <div className="barbell-plates-calculator">
       <div className="content">
         <div className="weight-display">
           <BarbellVisualization inputArray={inputArray} metric={metric} />
