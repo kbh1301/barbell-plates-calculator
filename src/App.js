@@ -7,7 +7,7 @@ import { useInitialRender } from './utils/utils.js';
 import { getStep, getInputArray, getCountObj, metricConversion } from './utils/calculations';
 import { validateInput, validateInputByStep } from './utils/validators.js';
 
-function App() {
+function BarbellPlatesCalculator() {
   // determines if current render is the first
   const initialRender = useInitialRender();
   
@@ -65,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default BarbellPlatesCalculator;

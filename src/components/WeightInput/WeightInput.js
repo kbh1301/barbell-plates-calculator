@@ -32,7 +32,7 @@ const WeightInput = ({ step, setInput, setMetric, inputComponent }) => {
                         <input
                             id="weight-input"
                             ref={inputComponent}
-                            min="0"
+                            min="45"
                             max="1500"
                             required
                             defaultValue="202.5"
