@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import './WeightInput.scss';
 import './Input.scss';
 import './Toggle.scss';
-import bbIcon from '../../img/bbIcon.png'
+import bbIcon from '../img/bbIcon.png'
 
 const WeightInput = ({ step, setInput, setMetric, inputComponent }) => {
 

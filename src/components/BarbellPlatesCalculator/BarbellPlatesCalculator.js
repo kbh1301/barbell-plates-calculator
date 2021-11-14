@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import WeightInput from './components/WeightInput/WeightInput';
-import BarbellVisualization from './components/BarbellVisualization';
-import WeightInfo from './components/WeightInfo';
-import { useInitialRender } from './utils/utils.js';
-import { getStep, getInputArray, getCountObj, metricConversion } from './utils/calculations';
-import { validateInput, validateInputByStep } from './utils/validators.js';
+import './BarbellPlatesCalculator.css';
+import WeightInput from '../WeightInput/WeightInput';
+import BarbellVisualization from '../BarbellVisualization/BarbellVisualization';
+import WeightInfo from '../WeightInfo/WeightInfo';
+import { useInitialRender } from '../utils/utils.js';
+import { getStep, getInputArray, getCountObj, metricConversion } from '../utils/calculations';
+import { validateInput, validateInputByStep } from '../utils/validators.js';
 
-function BarbellPlatesCalculator() {
+export const BarbellPlatesCalculator = () => {
   // determines if current render is the first
   const initialRender = useInitialRender();
   
@@ -64,5 +64,3 @@ function BarbellPlatesCalculator() {
     </div>
   );
 }
-
-export default BarbellPlatesCalculator;

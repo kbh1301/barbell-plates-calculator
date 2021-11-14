@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.weight-info {
+    padding: 15px;
+    width: 100%;
+}
+
 .weight-info-number {
-    margin-left: 1.25em;
     overflow: hidden;
     border: 1.5px solid black;
     border-radius: 1rem;
@@ -30,10 +37,10 @@ th {
     text-align: center;
     padding: .25em .5em .25em .5em;
     border-bottom: 1.5px solid black;
-    font-family: Montserrat, sans-serif
+    font-family: 'Montserrat', sans-serif
 }
 
 td {
     padding: .0625em .25em .0625em .25em;
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
