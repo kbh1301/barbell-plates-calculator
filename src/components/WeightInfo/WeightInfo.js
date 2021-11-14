@@ -1,3 +1,4 @@
+import React from 'react';
 import './WeightInfo.css';
 
 const WeightInfo = ({ countObj, metric }) => {
@@ -15,16 +16,18 @@ const WeightInfo = ({ countObj, metric }) => {
 
     // complete WeightInfo
     return(
-        <table className="weight-info-number">
-            <thead>
-                <tr>
-                    <th colSpan="2">PER SIDE:</th>
-                </tr>
-            </thead>
-            <tbody>
-                {buildPlateInfo()}
-            </tbody>
-        </table>
+        <div className="weight-info">
+            <table className="weight-info-number">
+                <thead>
+                    <tr>
+                        <th colSpan="2">PER SIDE:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {buildPlateInfo()}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
