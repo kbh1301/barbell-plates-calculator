@@ -64,7 +64,7 @@ export const getCountObj = (inputArray) => {
 }
 
 export const getStep = (metric) => {
-    return platesFromMetric(metric).at(-1);
+    return Math.min(...platesFromMetric(metric));
 }
 
 export const metricConversion = (metric, inputComponent) => {

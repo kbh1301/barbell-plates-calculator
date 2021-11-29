@@ -23,7 +23,7 @@
   }
   
   .content {
-    width: 555px;
+    max-width: 555px;
     display: flex;
     flex-direction: column;
     border: solid;
