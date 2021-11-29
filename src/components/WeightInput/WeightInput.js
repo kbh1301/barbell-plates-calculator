@@ -38,14 +38,14 @@ const WeightInput = ({ step, setInput, setMetric, inputComponent }) => {
                             defaultValue="202.5"
                             onChange={(e) => setInput(e.target.value)}
                         />
-                        <label for="weight-input">Weight</label>
+                        <label htmlFor="weight-input">Weight</label>
                     </form>
                     <div className="step-btn-wrapper" onClick={(e) => stepCalc(e.target.id)}>
                         <button id="step-up" className="step-btn">&#9650;</button>
                         <button id="step-down" className="step-btn">&#9660;</button>
                     </div>
-                    <label for="metric-input" class="metric-toggle">
-                        <span class="toggle-handler"/>
+                    <label htmlFor="metric-input" className="metric-toggle">
+                        <span className="toggle-handler"/>
                     </label>
                 </div>
             </div>

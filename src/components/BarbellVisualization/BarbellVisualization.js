@@ -8,9 +8,9 @@ import plateImg from '../img/plate.png'
 
 const BarbellVisualization = ({ inputArray }) => {
     // for each plate in inputArray, create img component
-    const buildPlateImgs = () => inputArray.map((plate) => {
+    const buildPlateImgs = () => inputArray.map((plate, i) => {
         return(
-            <div className="flex-cell">
+            <div key={i} className="flex-cell">
                 <img className="plate-img" src={plateImg} alt="" style={{height:`${plate.plateSize}%`}}/>
             </div>
         );
