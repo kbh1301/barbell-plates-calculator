@@ -1,4 +1,4 @@
-This React application is built as a demo for my portfolio site: https://kbh1301.github.io/profile/
+This React component is built as a demo for my portfolio site: https://kbh1301.github.io/profile/
 
 Overview:
 Based on user input, this application will calculate and display the olympic plates needed
