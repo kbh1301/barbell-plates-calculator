@@ -1,4 +1,4 @@
-This React component is built as a demo for my portfolio site: https://kbh1301.github.io/profile/Demos#bbcalc
+This React component is built as a demo for my portfolio site: https://kbh1301.github.io/Demos#bbcalc
 
 Overview:
 Based on user input, this application will calculate and display the olympic plates needed
